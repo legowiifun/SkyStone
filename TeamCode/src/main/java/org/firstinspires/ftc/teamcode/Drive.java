@@ -146,12 +146,12 @@ public class Drive {
 
     public void latch() {
         trobot.getLeftServo().setPosition(0.5);
-        trobot.getRightServo().setPosition(0.3);
+        trobot.getRightServo().setPosition(0.5);
     }
 
     public void unlatch() {
-        trobot.getLeftServo().setPosition(1);
-        trobot.getRightServo().setPosition(0);
+        trobot.getLeftServo().setPosition(0);
+        trobot.getRightServo().setPosition(1);
     }
 
     /*public void collector(boolean in, boolean stop) {

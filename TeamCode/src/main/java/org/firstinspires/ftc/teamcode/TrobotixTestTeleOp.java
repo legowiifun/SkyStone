@@ -89,7 +89,7 @@ public class TrobotixTestTeleOp extends LinearOpMode {
 
 
 
-            drive.driving(gamepad1.left_stick_y, gamepad1.right_stick_y); // Send calculated power to wheels
+            drive.driving(gamepad1.left_stick_y, gamepad1.right_stick_y,0.); // Send calculated power to wheels
 
 
 
