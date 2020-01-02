@@ -24,7 +24,7 @@ import com.qualcomm.robotcore.util.Range;
 
 @TeleOp(name="BenjiElevatorCode", group="Linear Opmode")
 
-public class BenjiElevatorUpDownCode extends LinearOpMode {
+public class ElevatorUpDownCodeTest extends LinearOpMode {
 
     // Declare OpMode members.
     private ElapsedTime runtime = new ElapsedTime();
