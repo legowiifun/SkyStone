@@ -10,10 +10,15 @@ import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.hardware.ServoController;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
-@Autonomous(name="Servo Down",group = "Autonomous")
-public class AutomonousServoDown extends LinearOpMode {
-private Servo AutoServo = null;
-private ElapsedTime     runtime = new ElapsedTime();
+@Autonomous(name="move forward",group = "Autonomous")
+
+public class AutomonousMoveForward extends LinearOpMode {
+    private DcMotor leftDrive = null;
+    private DcMotor rightDrive = null;
+    private DcMotor leftDrive2 = null;
+    private DcMotor rightDrive2 = null;
+    private DcMotor elevatorMotor = null;
+    private ElapsedTime     runtime = new ElapsedTime();
     static final double     COUNTS_PER_MOTOR_REV    = 1120 ;    // eg: TETRIX Motor Encoder
     static final double     DRIVE_GEAR_REDUCTION    = 1.0 ;     // This is < 1.0 if geared UP
     static final double     WHEEL_DIAMETER_INCHES   = 4.0 ;     // For figuring circumference
@@ -23,7 +28,10 @@ private ElapsedTime     runtime = new ElapsedTime();
     static final double     TURN_SPEED              = 0.5;
 
     public void runOpMode() {
-        AutoServo = hardwareMap.get(Servo.class, "auto_servo");
+        leftDrive  = hardwareMap.get(DcMotor.class, "front_left");
+        rightDrive = hardwareMap.get(DcMotor.class, "front_right");
+        rightDrive2 = hardwareMap.get(DcMotor.class, "rear_right");
+        leftDrive2 = hardwareMap.get(DcMotor.class, "rear_left");
         telemetry.addData("Status", "Resetting Encoders");
         telemetry.update();
         telemetry.addData("Path0",  "Starting at %7d :%7d");
@@ -31,8 +39,14 @@ private ElapsedTime     runtime = new ElapsedTime();
 
         // Wait for the game to start (driver presses PLAY)
         waitForStart();
-        AutoServo.setPosition(0.5);
-        sleep(3000);
-        AutoServo.setPosition(0);
+        leftDrive.setPower(1);
+        rightDrive.setPower(1);
+        leftDrive2.setPower(1);
+        rightDrive2.setPower(1);
+        sleep(100);
+        leftDrive.setPower(0);
+        rightDrive.setPower(0);
+        leftDrive2.setPower(0);
+        rightDrive2.setPower(0);
     }
 }
