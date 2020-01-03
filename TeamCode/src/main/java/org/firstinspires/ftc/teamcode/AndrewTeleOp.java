@@ -8,16 +8,12 @@ import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 import com.qualcomm.robotcore.util.Range;
 
-
-
-
 @TeleOp(name="Andrew TeleOp", group="Linear Opmode")
 
 public class AndrewTeleOp extends LinearOpMode {
 
     // Declare OpMode members.
     private ElapsedTime runtime = new ElapsedTime();
-
 
     boolean servoCheck = false;
     String servoStatus = "Unlatched";
@@ -37,11 +33,9 @@ public class AndrewTeleOp extends LinearOpMode {
         waitForStart();
         runtime.reset();
 
-
         // run until the end of the match (driver presses STOP)
         while (opModeIsActive()) {
             drive.driving(gamepad1.left_stick_y, gamepad1.right_stick_y, 0.5); // Send calculated power to wheels
-
 
             boolean DPadLeft = gamepad1.dpad_left;
             boolean DPadRight = gamepad1.dpad_right;

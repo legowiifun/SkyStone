@@ -4,14 +4,12 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
-
 @TeleOp(name="Benji TeleOp", group="Linear Opmode")
 
 public class BenjiTeleOp extends LinearOpMode {
 
     // Declare OpMode members.
     private ElapsedTime runtime = new ElapsedTime();
-
 
     boolean servoCheck = false;
     String servoStatus = "Unlatched";
@@ -36,7 +34,6 @@ double speed = 1;
         while (opModeIsActive()) {
 
             drive.driving(gamepad1.left_stick_y, gamepad1.right_stick_y, speed); // Send calculated power to wheels
-
 
             boolean DPadLeft = gamepad1.dpad_left;
             boolean DPadLeft2 = gamepad2.dpad_left;
