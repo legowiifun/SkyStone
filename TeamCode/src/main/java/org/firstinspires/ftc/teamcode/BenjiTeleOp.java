@@ -11,9 +11,6 @@ public class BenjiTeleOp extends LinearOpMode {
     // Declare OpMode members.
     private ElapsedTime runtime = new ElapsedTime();
 
-    boolean servoCheck = false;
-    String servoStatus = "Unlatched";
-
     @Override
 
     public void runOpMode() {
