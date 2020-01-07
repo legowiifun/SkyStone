@@ -29,6 +29,7 @@ public class AndrewTeleOp extends LinearOpMode {
         while (opModeIsActive()) {
             drive.driving(gamepad1.left_stick_y, gamepad1.right_stick_y, 0.5); // Send calculated power to wheels
 
+            //variables for the buttons
             boolean DPadLeft = gamepad1.dpad_left;
             boolean DPadRight = gamepad1.dpad_right;
             boolean DPadUp = gamepad1.dpad_up;
@@ -41,6 +42,7 @@ public class AndrewTeleOp extends LinearOpMode {
             boolean Y = gamepad1.y;
             boolean B = gamepad1.b;
             boolean X = gamepad1.x;
+
                 if (DPadLeft) {
                     //strafe to the left
                     drive.strafe(1, 1);
