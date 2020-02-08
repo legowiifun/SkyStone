@@ -4,11 +4,11 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
-
+//class configure
 public class Configure {
     private Trobot trobot = new Trobot();
     private HardwareMap hardwareMap = null;
-
+//Configure.Configure -  Configure hardware map
     Configure(HardwareMap hardwareMap) {
         this.hardwareMap = hardwareMap;
     }
@@ -24,13 +24,13 @@ public class Configure {
     public void setHardwareMap(HardwareMap hardwareMap) {
         this.hardwareMap = hardwareMap;
     }
-
+//Configure.initialize - initialize the motors
     public void initialize() {
         initializeDrive();
         initializeServo();
         //initializeCollector();
     }
-
+//initializeDrive - iniitialize the drive motors and the elevator and claw motors - if you change the names or add motors, change them here
     public void initializeDrive() {
         trobot.setLeftDriveFront(hardwareMap.get(DcMotor.class, "front_left"));
         trobot.setRightDriveFront(hardwareMap.get(DcMotor.class, "front_right"));
@@ -45,19 +45,11 @@ public class Configure {
         trobot.getLeftDriveBack().setDirection(DcMotor.Direction.REVERSE);
         trobot.getRightDriveBack().setDirection(DcMotor.Direction.REVERSE);
     }
-
+//initializeServo - iniitialize the Servos - if you change the names or add motors, change them here as well
     public void initializeServo() {
         trobot.setAutoServo(hardwareMap.get(Servo.class, "auto_servo"));
         trobot.setRightServo(hardwareMap.get(Servo.class,"right_servo"));
         trobot.setLeftServo(hardwareMap.get(Servo.class, "left_servo"));
     }
-
-    //public void initializeCollector() {
-      //  trobot.setIntakeLeft(hardwareMap.get(DcMotor.class, "left intake"));
-        //trobot.setIntakeRight(hardwareMap.get(DcMotor.class, "right intake"));
-
-        //trobot.getIntakeLeft().setDirection(DcMotor.Direction.FORWARD);
-        //trobot.getIntakeRight().setDirection(DcMotor.Direction.REVERSE);
-    //}
 
 }

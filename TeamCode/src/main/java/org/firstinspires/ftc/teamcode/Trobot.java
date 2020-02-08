@@ -4,8 +4,9 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
-
+//class Trobot
 public class Trobot {
+    //define motors - if motor is added, add it here, right-click, click Generate, and select Getter and Setter
     private DcMotor intakeRight = null;
     private DcMotor intakeLeft = null;
 
@@ -15,6 +16,7 @@ public class Trobot {
     private DcMotor rightDriveBack = null;
 
     private DcMotor elevator = null;
+   //getters and setters for each motor
     public DcMotor getElevator() {
         return elevator;
     }
