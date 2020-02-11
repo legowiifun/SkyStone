@@ -1,0 +1,44 @@
+you need to have the files Drive, Trobot, and Configure to use the class hierarchy
+
+to make new class using the class hierarchy:
+
+package org.firstinspires.ftc.teamcode;
+import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+@TeleOp(name="name", group="TeleOp or Autonomous")
+public class ClassName extends LinearOpMode {
+    public void runOpMode() {
+        Configure configure = new Configure(hardwareMap);
+        configure.initialize();
+        Trobot trobot = configure.getTrobot();
+        Drive drive = new Drive(trobot);
+        waitForStart();
+        code here
+
+
+to create new commands
+put in the Drive class
+    public void NAMEHERE(ParameterType parameter) {
+        code here
+    }
+
+call with drive.NAMEHERE - Capitalization matters!!!!
+
+to change motors - trobot.getMotor().setPower(power);
+to change servos - trobot.getServo().setPosition(position);
+
+to add new motor
+
+add to configure.initializeDrive method
+        trobot.setMotorName(hardwareMap.get(DcMotor.class, "MotorName"));
+add to Trobot class
+    private DcMotor MotorName = null;
+right-click on the motor defining above, click Generate, and select Getter and Setter
+
+to add servo
+add to configure.initializeServo method
+        trobot.setServoName(hardwareMap.get(Servo.class, "ServoName"));
+add to Trobot class
+    private Servo ServoName = null;
+right-click on the servo defining above, click Generate, and select Getter and Setter
