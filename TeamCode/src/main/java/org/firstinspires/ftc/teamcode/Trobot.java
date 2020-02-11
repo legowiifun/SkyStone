@@ -7,9 +7,6 @@ import com.qualcomm.robotcore.hardware.Servo;
 //class Trobot
 public class Trobot {
     //define motors - if motor is added, add it here, right-click, click Generate, and select Getter and Setter
-    private DcMotor intakeRight = null;
-    private DcMotor intakeLeft = null;
-
     private DcMotor leftDriveFront = null;
     private DcMotor rightDriveFront = null;
     private DcMotor leftDriveBack = null;
@@ -48,23 +45,6 @@ public class Trobot {
         this.AutoServo = AutoServo;
     }
 
-
-
-    public DcMotor getIntakeRight() {
-        return intakeRight;
-    }
-
-    public void setIntakeRight(DcMotor intakeRight) {
-        this.intakeRight = intakeRight;
-    }
-
-    public DcMotor getIntakeLeft() {
-        return intakeLeft;
-    }
-
-    public void setIntakeLeft(DcMotor intakeLeft) {
-        this.intakeLeft = intakeLeft;
-    }
 
     public DcMotor getLeftDriveFront() {
         return leftDriveFront;
