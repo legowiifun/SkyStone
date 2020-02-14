@@ -1,12 +1,13 @@
-you need to have the files Drive, Trobot, and Configure to use the class hierarchy
-
-to make new class using the class hierarchy:
+* TO CREATE A FILE
+    * you need to have the files Drive, Trobot, and Configure to use the class hierarchy
+    * to make new class using the class hierarchy, use the code below
 
 package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
-@TeleOp(name="name", group="TeleOp or Autonomous")
+
+@TeleOp(name="name that shows up in app", group="TeleOp or Autonomous")
 public class ClassName extends LinearOpMode {
     public void runOpMode() {
         Configure configure = new Configure(hardwareMap);
@@ -15,30 +16,54 @@ public class ClassName extends LinearOpMode {
         Drive drive = new Drive(trobot);
         waitForStart();
         code here
+    }
+}
 
+* drive commands
+    * drive.driving: moves the wheels seperatly
+    * drive.straightDrive: moves the wheels in the same direction at the same speed
+    * drive.encoderDrive: I don't know what this does
+    * drive.skyClaw: moves the autonomous claw up or down
+    * drive.move: moves the robot a set distance - I don't think this works
+    * drive.strafe: makes the robot strafe right or left
+    * drive.elevator: moves the elevator up and down
+    * drive.claw: opens and closes the claw
+    * drive.stop: stops the robot
+    * drive.latch: lowers the foundation claws
+    * drive.unlatch: raises the foundation claws
+* to do things that are not in the above list
+    * put this code in the Drive class
 
-to create new commands
-put in the Drive class
     public void NAMEHERE(ParameterType parameter) {
         code here
     }
 
-call with drive.NAMEHERE - Capitalization matters!!!!
+    * use the program with drive.NAMEHERE - Capitalization matters!!!!
+    * to change a motor speed in the method, use this line of code
 
-to change motors - trobot.getMotor().setPower(power);
-to change servos - trobot.getServo().setPosition(position);
+    trobot.getMotor().setPower(power);
 
-to add new motor
+    * to change a servo position in the method, use this line of code
 
-add to configure.initializeDrive method
+    trobot.getServo().setPosition(position);
+
+* to add a new motor
+    * add this code to configure.initializeDrive method
+
         trobot.setMotorName(hardwareMap.get(DcMotor.class, "MotorName"));
-add to Trobot class
-    private DcMotor MotorName = null;
-right-click on the motor defining above, click Generate, and select Getter and Setter
 
-to add servo
-add to configure.initializeServo method
-        trobot.setServoName(hardwareMap.get(Servo.class, "ServoName"));
-add to Trobot class
+    * add this code to the Trobot class, outside of any of the methods
+
+    private DcMotor MotorName = null;
+
+    * right-click on the motor that you defiined, select "Generate", and select "Getter and Setter" from the menu
+* to add a new servo
+    * add this line of code to configure.initializeServo method
+
+     trobot.setServoName(hardwareMap.get(Servo.class, "ServoName"));
+
+    * add this line of code to the Trobot class, outside of any of the methods
+
     private Servo ServoName = null;
-right-click on the servo defining above, click Generate, and select Getter and Setter
+
+    * right-click on the servo that you defined, select "Generate", and select "Getter and Setter" from the menu
