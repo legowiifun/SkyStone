@@ -56,7 +56,7 @@ public class ClassName extends LinearOpMode {
 
     private DcMotor MotorName = null;
 
-    * right-click on the motor that you defiined, select "Generate", and select "Getter and Setter" from the menu
+    * right-click on the motor that you defined, select "Generate", and select "Getter and Setter" from the menu
 * to add a new servo
     * add this line of code to configure.initializeServo method
 
