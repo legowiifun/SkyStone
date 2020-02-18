@@ -22,7 +22,7 @@ public class ClassName extends LinearOpMode {
 * drive commands
     * drive.driving: moves the wheels seperatly
     * drive.straightDrive: moves the wheels in the same direction at the same speed
-    * drive.encoderDrive: I don't know what this does
+    * drive.encoderDrive: moves forwards or backwards a certain speed using the encoders - doesn't work
     * drive.skyClaw: moves the autonomous claw up or down
     * drive.move: moves the robot a set distance - I don't think this works
     * drive.strafe: makes the robot strafe right or left
