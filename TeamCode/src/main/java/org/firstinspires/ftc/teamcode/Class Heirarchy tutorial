@@ -1,6 +1,6 @@
 * TO CREATE A FILE
     * you need to have the files Drive, Trobot, and Configure to use the class hierarchy
-    * to make new class using the class hierarchy, use the code below
+    * to make new class using the class hierarchy, start with the code below
 
 package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
