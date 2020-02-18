@@ -41,11 +41,11 @@ public class ClassName extends LinearOpMode {
     * use the program with drive.NAMEHERE - Capitalization matters!!!!
     * to change a motor speed in the method, use this line of code
 
-    trobot.getMotor().setPower(power);
+    trobot.getMOTORNAME().setPower(power);
 
     * to change a servo position in the method, use this line of code
 
-    trobot.getServo().setPosition(position);
+    trobot.getSERVONAME().setPosition(position);
 
 * to add a new motor
     * add this code to configure.initializeDrive method
